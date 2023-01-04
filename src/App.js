@@ -1,27 +1,38 @@
-import React from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
-import Register from "./pages/Register";
+import Home from "./pages/Home";
 import Login from "./pages/Login";
-import NotFound from "./pages/NotFound";
-const App = () => {
+import Register from "./pages/Register";
+import "./style.scss";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
+
+function App() {
+  const { currentUser } = useContext(AuthContext);
+
+  const ProtectedRoute = ({ children }) => {
+    if (!currentUser) {
+      return <Navigate to="/login" />;
+    }
+
+    return children;
+  };
+
   return (
-    <>
-      <Switch>
-        <Route path="/" exact>
-          <Redirect to="/register" />
-        </Route>
-        <Route path="/register">
-          <Register />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="*">
-          <NotFound />
-        </Route>
-      </Switch>
-    </>
+    <Routes>
+      <Route path="/">
+        <Route
+          index
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+      </Route>
+    </Routes>
   );
-};
+}
 
 export default App;
