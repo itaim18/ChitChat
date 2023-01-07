@@ -27,12 +27,13 @@ const Message = ({ message, showImage }) => {
     text = minutes + "m";
   } else if (hours < 24) {
     text = hours + "h";
-  } else {
+  } else if (days < 365) {
     text = days + "d";
   }
-  if (days > 7) {
+  if (days > 365) {
     text = new Date(pastDate * 1000);
   }
+  console.log(text);
   return (
     <div
       ref={ref}

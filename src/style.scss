@@ -239,8 +239,15 @@ p {
         font-size: 24px;
         border-radius: 5px;
         transition: var(--transition);
+        border: 2px solid var(--clr-background-relative);
       }
+      .demo {
+        background-color: var(--clr-grey-10);
+        color: var(--clr-background-relative);
+      }
+
       button:hover {
+        color: var(--clr-white);
         background-color: var(--clr-background);
       }
     }
