@@ -10,7 +10,7 @@
 
 <img src="https://github.com/itaim18/ChitChat/blob/master/src/assets/logo.png" alt="logo" width="180" >
 
-## description
+## 💻 Description
 
 Connect with people all around the world uisng chit-chat. send texts and images get notified on unseen messages and see the images in full size if wished.
 
