@@ -8,7 +8,7 @@
 
 # 💬[Chit Chat](https://chitnchat.netlify.app/login)
 
-<img src="https://github.com/itaim18/ChitChat/blob/master/src/assets/logo.png" alt="logo" size="100" >
+<img src="https://github.com/itaim18/ChitChat/blob/master/src/assets/logo.png" alt="logo" width="180" >
 
 ## description
 
