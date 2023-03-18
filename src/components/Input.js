@@ -67,7 +67,6 @@ const Input = () => {
         [data.chatId + ".date"]: serverTimestamp(),
       });
     } else {
-      console.log("incrementing unseen by 1");
       await updateDoc(doc(db, "userChats", data.user.uid), {
         [data.chatId + ".lastMessage"]: {
           text,

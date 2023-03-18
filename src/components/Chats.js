@@ -28,6 +28,7 @@ const Chats = ({ handleSelectChat }) => {
     handleSelectChat();
     dispatch({ type: "CHANGE_USER", payload: u });
   };
+
   return (
     <div className="chats">
       {chats &&
@@ -39,7 +40,7 @@ const Chats = ({ handleSelectChat }) => {
               key={chat[0]}
               onClick={() => handleSelect(chat[1].userInfo)}
             >
-              <img src={chat[1].userInfo.photoURL} alt="profile" />
+              <img src={chat[1].userInfo?.photoURL} alt="profile" />
               <div className="userChatInfo">
                 <div>
                   {chat[1]?.unseen > 0 ? (
@@ -47,7 +48,7 @@ const Chats = ({ handleSelectChat }) => {
                       {chat[1].userInfo.displayName}
                     </span>
                   ) : (
-                    <span>{chat[1].userInfo.displayName}</span>
+                    <span>{chat[1].userInfo?.displayName}</span>
                   )}
                   {chat[1].lastMessage?.text.length >= 27 ? (
                     <p>{chat[1].lastMessage?.text.slice(0, 27)}...</p>

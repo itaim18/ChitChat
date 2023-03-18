@@ -33,7 +33,7 @@ const Message = ({ message, showImage }) => {
   if (days > 365) {
     text = new Date(pastDate * 1000);
   }
-  console.log(text);
+
   return (
     <div
       ref={ref}

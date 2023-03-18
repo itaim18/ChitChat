@@ -24,7 +24,6 @@ const Messages = ({ hide, showChat }) => {
           data.chatId !== "null" &&
           currentUser.uid)
       ) {
-        console.log("change seen - kof");
         const transChatRef = doc(db, "userChats", currentUser.uid);
         await updateDoc(transChatRef, {
           [data.chatId + ".unseen"]: 0,
