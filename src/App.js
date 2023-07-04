@@ -10,7 +10,7 @@ function App() {
   const { currentUser } = useContext(AuthContext);
 
   const ProtectedRoute = ({ children }) => {
-    if (!currentUser) {
+    if (!currentUser || Object.keys(currentUser).length === 0) {
       return <Navigate to="/login" />;
     }
 
